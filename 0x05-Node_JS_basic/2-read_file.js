@@ -23,6 +23,4 @@ function countStudents(path) {
   console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
 }
 
-countStudents("database.csv");
-
 module.exports = countStudents;
