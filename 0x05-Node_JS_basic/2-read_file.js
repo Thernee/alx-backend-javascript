@@ -7,7 +7,7 @@ function countStudents(path) {
 
   // read csv
   const csv = fs.readFileSync(path, 'utf8');
-  const rows = csv.split('\n');
+  const rows = csv.trim().split('\n');
   const students = rows.slice(1);
 
   // filter by major
@@ -22,5 +22,7 @@ function countStudents(path) {
   console.log(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(', ')}`);
   console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(', ')}`);
 }
+
+countStudents("database.csv");
 
 module.exports = countStudents;
