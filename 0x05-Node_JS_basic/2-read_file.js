@@ -1,6 +1,11 @@
 const fs = require('fs');
 
 function countStudents(path) {
+  if (!fs.existsSync(path)) {
+    throw new Error('Cannot load the database');
+  }
+
+  // read csv
   const csv = fs.readFileSync(path, 'utf8');
   const rows = csv.split('\n');
   const students = rows.slice(1);
