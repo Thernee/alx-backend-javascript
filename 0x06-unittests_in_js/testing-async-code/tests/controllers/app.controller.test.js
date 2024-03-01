@@ -1,8 +1,8 @@
-const chai = require("chai");
+const chai = require('chai');
 const expect = chai.expect;
 
-const sinon = require("sinon");
-const indexPage = require("../../controllers/app.controller");
+const sinon = require('sinon');
+const indexPage = require('../../controllers/app.controller');
 
 // const user = {
 //   addUser: (name) => {
@@ -37,14 +37,14 @@ const indexPage = require("../../controllers/app.controller");
 //   });
 // });
 
-describe("appController", function() {
-  describe("getIndexPage", function() {
-    it("should send hey when user is logged in", function() {
-      let user = {
-        isLoggedIn: function() {}
-      }
+describe('appController', function () {
+  describe('getIndexPage', function () {
+    it('should send hey when user is logged in', function () {
+      const user = {
+        isLoggedIn: function () {}
+      };
 
-      isLoggedInStub = sinon.stub(user, "isLoggedIn").returns(true) 
+      isLoggedInStub = sinon.stub(user, 'isLoggedIn').returns(true);
     });
   });
 });
