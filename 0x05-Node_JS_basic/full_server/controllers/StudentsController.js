@@ -2,7 +2,6 @@ import readDatabase from '../utils';
 
 export default class StudentsController {
   static getAllStudents(req, res) {
-
     readDatabase(process.argv[2])
       .then((result) => {
         res.statuscode = 200;
@@ -16,6 +15,11 @@ export default class StudentsController {
 
   static getAllStudentsByMajor(req, res) {
     const { major } = req.params;
+
+    if (!major) {
+      res.statuscode = 500;
+      res.end('Major parameter must be CS or SWE');
+    }
     if (major !== 'CS' && major !== 'SWE') {
       res.statuscode = 500;
       res.end('Major parameter must be CS or SWE');
