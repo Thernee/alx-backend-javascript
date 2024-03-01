@@ -17,12 +17,10 @@ export default class StudentsController {
     const { major } = req.params;
 
     if (!major) {
-      res.statuscode = 500;
-      res.end('Major parameter must be CS or SWE');
+      res.status(500).send('Major parameter must be CS or SWE');
     }
     if (major !== 'CS' && major !== 'SWE') {
-      res.statuscode = 500;
-      res.end('Major parameter must be CS or SWE');
+      res.status(500).send('Major parameter must be CS or SWE');
     } else {
       res.statuscode = 200;
       readDatabase(process.argv[2])
