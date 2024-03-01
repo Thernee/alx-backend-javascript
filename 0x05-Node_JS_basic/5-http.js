@@ -16,10 +16,12 @@ const app = http.createServer((req, res) => {
 
     countStudents(process.argv[2])
       .then((result) => {
-        const responseText = `Number of students: ${result.totalStudents}\n`
-      + `Number of students in CS: ${result.csStudents.length}. List: ${result.csStudents.join(', ')}\n`
-      + `Number of students in SWE: ${result.sweStudents.length}. List: ${result.sweStudents.join(', ')}`;
+        const responseText = `Number of students: ${result.totalStudents}\n` +
+      `Number of students in CS: ${result.csStudents.length}. List: ${result.csStudents.join(', ')}\n` +
+      `Number of students in SWE: ${result.sweStudents.length}. List: ${result.sweStudents.join(', ')}`;
         res.end(responseText);
+      }).catch((err) => {
+        res.end(err.message);
       });
   }
 });
