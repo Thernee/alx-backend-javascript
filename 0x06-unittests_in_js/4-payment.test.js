@@ -14,4 +14,4 @@ describe('sendPaymentRequestToApi', () => {
 
     spy.calculateNumber.restore();
   });
-})
+});
