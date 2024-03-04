@@ -7,9 +7,8 @@ describe("getPaymentTokenFromAPI", () => {
   it("should return object when promise is resolved", (done) => {
     getPaymentTokenFromAPI(true)
       .then((result) => {
-        expect(result.data).to.be.equal('Successful response from the API')
+        expect(result.data).to.be.equal('Successful response from the API');
+        done();
       });
-
-    done()
   });
 });
